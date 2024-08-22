@@ -22,27 +22,11 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String fullName;
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
     @Column(unique = true, length = 100, nullable = false)
     private String email;
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     @Column(nullable = false)
     private String password;
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     @CreationTimestamp
     @Column(updatable = false, name = "created_at")
@@ -85,6 +69,66 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-    
-    // Getters and setters
+
+    public Integer getId() {
+        return id;
+    }
+
+    public User setId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public User setFullName(String fullName) {
+        this.fullName = fullName;
+        return this;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public User setEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public User setPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public User setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public User setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", fullName='" + fullName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

@@ -2,24 +2,31 @@ package com.devdattakhoche.auth_api.dtos;
 
 public class LoginUserDto {
     private String email;
-    
+    private String password;
+
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public LoginUserDto setEmail(String email) {
         this.email = email;
+        return this;
     }
-
-    private String password;
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public LoginUserDto setPassword(String password) {
         this.password = password;
+        return this;
     }
-    
-    // getters and setters here...
+
+    @Override
+    public String toString() {
+        return "LoginUserDto{" +
+                "email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }
